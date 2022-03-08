@@ -51,10 +51,10 @@ const getInfo = async (event) => {
     city_name.innerText = `Please enter your city to search!`;
   } else {
     try {
-      let url1 = `http://api.openweathermap.org/geo/1.0/direct?q=${cityVal},+91&limit=1&appid=d9b5c4168b05d480f739cd6386a39a01`;
+      let url1 = `https://api.openweathermap.org/geo/1.0/direct?q=${cityVal},+91&limit=1&appid=d9b5c4168b05d480f739cd6386a39a01`;
       const response = await fetch(url1);
       const arrData1 = await response.json();
-      let url2= `http://api.openweathermap.org/data/2.5/weather?lat=${arrData1[0].lat}&lon=${arrData1[0].lon}&appid=d9b5c4168b05d480f739cd6386a39a01`;
+      let url2= `https://api.openweathermap.org/data/2.5/weather?lat=${arrData1[0].lat}&lon=${arrData1[0].lon}&appid=d9b5c4168b05d480f739cd6386a39a01`;
       const response2 = await fetch(url2);
       const arrData2 = await response2.json();
       console.log(`${arrData2.main.temp-273} temp\n${arrData2.name}`);
